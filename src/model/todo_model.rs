@@ -1,10 +1,10 @@
 use actix_web::web::Data;
 use std::collections::BTreeMap;
 use serde::{ Serialize, Deserialize };
-use surrealdb::sql::{ thing, Array, Number, Object, Value };
+use surrealdb::sql::{ thing, Array, Object, Value };
 
 use crate::prelude::*;
-use crate::utils::{ macros::map };
+use crate::utils::macros::map;
 use crate::repository::surrealdb_repo::{ Creatable, Patchable, SurrealDBRepo };
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Content {

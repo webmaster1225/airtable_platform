@@ -8,7 +8,7 @@ mod prelude;
 mod error;
 
 use repository::surrealdb_repo::SurrealDBRepo;
-use api::todo_api::{ create_todo, get_todos, get_todo, update_todo, delete_todo };
+use api::todo_api::{ create_todo, get_todos, get_todo, update_todo, delete_todo, update_todo_item };
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -24,6 +24,7 @@ async fn main() -> std::io::Result<()> {
             .service(get_todo)
             .service(update_todo)
             .service(delete_todo)
+            .service(update_todo_item)
     })
         .bind(("127.0.0.1", 8080))?
         .run().await
